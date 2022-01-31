@@ -10,3 +10,9 @@ class LoginPageLocators:
                      
 class ProductPageLocators:                     
     BASKET_BTN = (By.CSS_SELECTOR, "button.btn-add-to-basket")
+    PRODUCT_NAME_PRICE = (By.CSS_SELECTOR, ".product_main")
+    TEXT_AFTER_ADD = (By.CSS_SELECTOR, "div.alert-success")
+    BASKET_PRICE = (By.CSS_SELECTOR, "div.alertinner p")
+    
+    
+    
