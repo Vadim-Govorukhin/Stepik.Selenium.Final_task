@@ -3,7 +3,8 @@ import math
 from selenium.common.exceptions import NoAlertPresentException
 
 browser = webdriver.Chrome()
-link = 'http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear'
+promo = "?promo=offer6"
+link = f'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/{promo}'
 browser.get(link)
 button = browser.find_element_by_css_selector("button.btn-add-to-basket")
 button.click()
@@ -25,6 +26,6 @@ def solve_quiz_and_get_code(browser):
         
 solve_quiz_and_get_code(browser) 
 
-text_area = browser.find_element_by_css_selector("div.alert-success")
+text_area = browser.find_element_by_css_selector("div.alert-success strong")
 
 name = browser.find_element_by_css_selector("div.alertinner p")
