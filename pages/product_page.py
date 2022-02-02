@@ -7,8 +7,8 @@ class ProductPage(BasePage):
         btn = self.browser.find_element(*ProductPageLocators.BASKET_BTN)
         btn.click()
         
-        self.solve_quiz_and_get_code()
-    
+        #self.solve_quiz_and_get_code()
+        
     def should_be_added_to_basket(self):
         product_name, product_price = self.should_be_name_and_price()
         
@@ -30,4 +30,11 @@ class ProductPage(BasePage):
         basket_price_area = self.browser.find_element(*ProductPageLocators.BASKET_PRICE)
         assert product_price in basket_price_area.text, "Price of product not equals price of basket"
         print('Price check: OK')
-                
+        
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+           "Success message is presented, but should not be"
+           
+    def should_be_disappeared_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+           "Success message is not disappeared, but should not be"
